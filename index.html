@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PERT/CPM</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="presentation">
+      <div class="state">
+        <div class="s__first">
+          <div class="lesson">
+            <pre>
+              <h1>PERT / CPM</h1> 
+An acronym for Program Evaluation Review Technique / Critical Path Method. 
+It is a method for scheduling and controlling projects.
+
+                <h1>PERT</h1>
+Program Evaluation and Review Technique (PERT)
+Network of nodes and arrows determine the critical activities, improve the
+schedule, if necessary, and review progress once the project is
+undertaken.
+            </p>
+          </div>
+          <div class="inputs">
+            <h1>Enter Number Of Activities</h1>
+            <input type="number" id="numberOfActivities" min="1" oninput="validity.valid||(value='');" />
+            <button class="btn next">Next</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="state">
+        <div class="s__second">
+          <div class="s__rule">
+            <div class="r__title">
+              <pre>
+Guide On How To 
+Put Input 
+              </pre>
+            </div>
+            <div class="r__content">
+              <p><strong>Description</strong>: Describe the activity</p>
+              <p>
+                <strong>Predecessors/Activities Needed To Start</strong>: Separate activities with a comma(e.g <strong>A,B,C</strong> or <strong>A</strong> or (-) if there are
+                no predecessors)
+              </p>
+              <p><strong>Time Are in Weeks:</strong></p>
+              <p><strong>Optimistic Time(a)</strong>: Best case scenario, minimal problemss</p>
+              <p><strong>Most Probable Time(m)</strong>: Average/moderate case scenario, average problems</p>
+              <p><strong>Pessimistic Time(b)</strong>: Worst case scenario, major problems</p>
+            </div>
+          </div>
+          <div class="table__wrap">
+            <table class="s__table">
+              <thead>
+                <tr>
+                  <th><p>Activities</p></th>
+                  <th><p>Description</p></th>
+                  <th><p>Predecessors</p></th>
+                  <th><p>Optimistic Time</p></th>
+                  <th><p>Most Probable Time</p></th>
+                  <th><p>Pessimistic Time</p></th>
+                </tr>
+              </thead>
+              <tbody id="acitivitInputs"></tbody>
+            </table>
+          </div>
+          <div class="btns">
+            <button class="btn prev">Prev</button>
+            <button class="btn submit">Calculate</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="state">
+        <div class="s__third">
+          <h1>Result</h1>
+          <div class="table__wrap">
+            <table class="s__table">
+              <thead>
+                <tr>
+                  <th><p>Activities</p></th>
+                  <th><p>Description</p></th>
+                  <th><p>Predecessors</p></th>
+                  <th><p>ET</p></th>
+                  <th><p>ES</p></th>
+                  <th><p>EF</p></th>
+                  <th><p>LS</p></th>
+                  <th><p>LF</p></th>
+                  <th><p>Slack</p></th>
+                </tr>
+              </thead>
+              <tbody id="activities"></tbody>
+            </table>
+          </div>
+          <div class="criticalPath"></div>
+          <div class="duration"></div>
+          <div class="btns">
+            <button class="btn prev">Prev</button>
+            <button class="btn reset">Reset</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </body>
+</html>
+
